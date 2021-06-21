@@ -19,30 +19,36 @@ func upload(c echo.Context) error {
 	// Read file
 	//-----------
 
-	// Source
-	file, err := c.FormFile("file")
+	// Multi
+	form, err := c.MultipartForm()
 	if err != nil {
 		return err
 	}
-	src, err := file.Open()
-	if err != nil {
-		return err
-	}
-	defer src.Close()
+	files := form.File["files"]
 
-	// Destination
-	dst, err := os.Create(file.Filename)
-	if err != nil {
-		return err
-	}
-	defer dst.Close()
+	for _, file := range files {
+		// Source
+		src, err := file.Open()
+		if err != nil {
+			return err
+		}
+		defer src.Close()
 
-	// Copy
-	if _, err = io.Copy(dst, src); err != nil {
-		return err
+		// Destination
+		dst, err := os.Create(file.Filename)
+		if err != nil {
+			return err
+		}
+		defer dst.Close()
+
+		// Copy
+		if _, err = io.Copy(dst, src); err != nil {
+			return err
+		}
+
 	}
 
-	return c.HTML(http.StatusOK, fmt.Sprintf("<p>File %s uploaded sucessfully with fields name=%s and email=%s.</p>", file.Filename, name, email))
+	return c.HTML(http.StatusOK, fmt.Sprintf("<p>File %d uploaded sucessfully with fields name=%s and email=%s.</p>", len(files), name, email))
 }
 
 func main() {

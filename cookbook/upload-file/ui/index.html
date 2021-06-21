@@ -3,15 +3,15 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Upload single file</title>
+    <title>Upload files</title>
 </head>
 
 <body>
-    <h1>Upload single file with fields</h1>
+    <h1>Upload files with fields</h1>
     <form action="/upload" method="post" enctype="multipart/form-data">
         Name: <input type="text" name="name"><br>
         Email: <input type="email" name="email"><br>
-        Files: <input type="file" name="file"><br><br>
+        Files: <input type="file" name="files" multiple><br><br>
         <input type="submit" value="Upload">
     </form>
 </body>
