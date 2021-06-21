@@ -1,57 +1,58 @@
 package main
 
 import (
-    "os"
-    "io"
-    "net/http"
-    "fmt"
-    "github.com/labstack/echo/v4"
+	"fmt"
+	"io"
+	"net/http"
+	"os"
+
+	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 )
 
 func upload(c echo.Context) error {
-    // Form
-    name := c.FormValue("name")
-    email := c.FormValue("email")
+	// Form
+	name := c.FormValue("name")
+	email := c.FormValue("email")
 
-    //-----------
-    // Read file
-    //-----------
+	//-----------
+	// Read file
+	//-----------
 
-    // Source
-    file, err := c.FormFile("file")
-    if err != nil {
-        return err
-    }
-    src, err := file.Open()
-    if err != nil {
-        return err
-    }
-    defer src.Close()
+	// Source
+	file, err := c.FormFile("file")
+	if err != nil {
+		return err
+	}
+	src, err := file.Open()
+	if err != nil {
+		return err
+	}
+	defer src.Close()
 
-    // Destination
-    dst, err := os.Create(file.Filename)
-    if err != nil {
-        return err
-    }
-    defer dst.Close()
+	// Destination
+	dst, err := os.Create(file.Filename)
+	if err != nil {
+		return err
+	}
+	defer dst.Close()
 
-    // Copy
-    if _, err = io.Copy(dst, src); err != nil {
-        return err
-    }
+	// Copy
+	if _, err = io.Copy(dst, src); err != nil {
+		return err
+	}
 
-    return c.HTML(http.StatusOK, fmt.Sprintf("<p>File %s uploaded sucessfully with fields name=%s and email=%s.</p>", file.Filename, name, email))
+	return c.HTML(http.StatusOK, fmt.Sprintf("<p>File %s uploaded sucessfully with fields name=%s and email=%s.</p>", file.Filename, name, email))
 }
 
 func main() {
-    e := echo.New()
+	e := echo.New()
 
-    e.Use(middleware.Logger())
-    e.Use(middleware.Recover())
+	e.Use(middleware.Logger())
+	e.Use(middleware.Recover())
 
-    e.Static("/", "ui")
-    e.POST("/upload", upload)
+	e.Static("/", "ui")
+	e.POST("/upload", upload)
 
-    e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(":1323"))
 }
