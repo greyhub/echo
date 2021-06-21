@@ -9,6 +9,20 @@ import (
 	"github.com/labstack/echo/v4/middleware"
 )
 
+func getJSONP(c echo.Context) error {
+	callback := c.QueryParam("callback")
+	var content struct {
+		Response  string    `json:"response"`
+		Timestamp time.Time `json:"timestamp"`
+		Random    int       `json:"random"`
+	}
+	content.Response = "Sent via JSONP"
+	content.Timestamp = time.Now().UTC()
+	content.Random = rand.Intn(1000)
+	c.Response().Header().Set(echo.HeaderContentType, echo.MIMETextHTMLCharsetUTF8)
+	return c.JSONP(http.StatusOK, callback, &content)
+}
+
 func main() {
 	e := echo.New()
 	e.Use(middleware.Logger())
@@ -17,20 +31,7 @@ func main() {
 	e.Static("/", "ui")
 
 	// JSONP
-	e.GET("/jsonp", func(c echo.Context) error {
-		callback := c.QueryParam("callback")
-		var content struct {
-			Response  string    `json:"response"`
-			Timestamp time.Time `json:"timestamp"`
-			Random    int       `json:"random"`
-		}
-		content.Response = "Sent via JSONP"
-		content.Timestamp = time.Now().UTC()
-		content.Random = rand.Intn(1000)
-        c.Response().Header().Set(echo.HeaderContentType, echo.MIMETextHTMLCharsetUTF8)
-		return c.JSONP(http.StatusOK, callback, &content)
-	})
+	e.GET("/jsonp", getJSONP)
 
-	// Start server
 	e.Logger.Fatal(e.Start(":1323"))
 }
