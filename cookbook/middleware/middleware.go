@@ -14,6 +14,8 @@ type (
 		Uptime       time.Time      `json:"uptime"`
 		RequestCount uint64         `json:"requestCount"`
 		Statuses     map[string]int `json:"statuses"`
+		Size         int64          `json:"size"`
+		Committed    bool           `json:"committed"`
 		mutex        sync.RWMutex
 	}
 )
@@ -35,6 +37,8 @@ func (s *Stats) Process(next echo.HandlerFunc) echo.HandlerFunc {
 		defer s.mutex.Unlock()
 		s.RequestCount++
 		status := strconv.Itoa(c.Response().Status)
+		s.Size = c.Response().Size
+		s.Committed = c.Response().Committed
 		s.Statuses[status]++
 		return nil
 	}
