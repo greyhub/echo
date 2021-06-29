@@ -6,19 +6,19 @@ import (
 )
 
 func home(c echo.Context) error {
-	return c.File("index.html")
+	return c.File("ui/index.html")
 }
 
 func show(c echo.Context) error {
-	return c.File("echo.svg")
+	return c.File("files/echo.svg")
 }
 
 func inline(c echo.Context) error {
-	return c.Inline("inline.txt", "Inline Text")
+	return c.Inline("files/inline.txt", "Inline Text")
 }
 
 func attachment(c echo.Context) error {
-	return c.Attachment("attachment.txt", "Attachment Text")
+	return c.Attachment("files/attachment.txt", "Attachment Text")
 }
 
 func main() {
