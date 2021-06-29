@@ -26,7 +26,7 @@ func getKey(token *jwt.Token) (interface{}, error) {
 
 	key, found := keySet.LookupKeyID(keyID)
 	if !found {
-		return nil, fmt.Errorf("Unable to fin key %q", keyID)
+		return nil, fmt.Errorf("Unable to find key %q", keyID)
 	}
 
 	var pubkey interface{}
