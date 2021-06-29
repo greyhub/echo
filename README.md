@@ -32,6 +32,7 @@
 
 # Note
 Not sure about
+- Recover
 - User-defined KeyFunc
 
 # Books
