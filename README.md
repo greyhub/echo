@@ -10,7 +10,8 @@
 - [x] Auto TLS
 - [ ] CORS
 - [x] CRUD
-- [x] Embed Resources
+- [x] Embed
+- [ ] Embed Resources
 - [x] File Download
 - [x] File Upload
 - [ ] Google App Engine
@@ -28,6 +29,10 @@
 - [x] Timeouts
 - [ ] Twitter
 - [ ] WebSocket
+
+# Note
+Not sure about
+- User-defined KeyFunc
 
 # References
 [Echo Labstack](https://echo.labstack.com/)
