@@ -11,14 +11,14 @@
 - [ ] CORS
 - [x] CRUD
 - [x] Embed
-- [ ] Embed Resources
+- [x] Embed Resources
 - [x] File Download
 - [x] File Upload
 - [ ] Google App Engine
 - [ ] Graceful Shutdown
 - [x] Hello World
-- [ ] HTTP/2
-- [ ] HTTP/2 Server Push
+- [x] HTTP/2
+- [x] HTTP/2 Server Push
 - [x] JSONP
 - [x] JWT
 - [ ] Load Balancing
