@@ -10,16 +10,17 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-var embededFiles embed.FS
+//go:embed ui
+var embeddedFiles embed.FS
 
 func getFileSystem(useOS bool) http.FileSystem {
 	if useOS {
 		log.Print("using live mode")
-		return http.FS(os.DirFS("app"))
+		return http.FS(os.DirFS("ui"))
 	}
 
 	log.Print("using embed mode")
-	fsys, err := fs.Sub(embededFiles, "app")
+	fsys, err := fs.Sub(embeddedFiles, "ui")
 	if err != nil {
 		panic(err)
 	}
@@ -34,7 +35,7 @@ func main() {
 	assetHandler := http.FileServer(getFileSystem(useOS))
 
 	e.GET("/", echo.WrapHandler(assetHandler))
-	e.GET("/static/*", echo.WrapHandler(http.StripPrefix("/static", assetHandler)))
+	e.GET("/static/*", echo.WrapHandler(http.StripPrefix("/static/", assetHandler)))
 
 	e.Logger.Fatal(e.Start(":1323"))
 }
