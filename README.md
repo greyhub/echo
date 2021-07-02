@@ -15,7 +15,7 @@
 - [x] File Download
 - [x] File Upload
 - [ ] Google App Engine
-- [ ] Graceful Shutdown
+- [x] Graceful Shutdown
 - [x] Hello World
 - [x] HTTP/2
 - [x] HTTP/2 Server Push
