@@ -21,9 +21,9 @@
 - [x] HTTP/2 Server Push
 - [x] JSONP
 - [x] JWT
-- [ ] Load Balancing
+- [x] Load Balancing
 - [x] Middleware
-- [ ] Reverse Proxy
+- [x] Reverse Proxy
 - [x] Streaming Response
 - [x] Subdomains
 - [x] Timeouts
