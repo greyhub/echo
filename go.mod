@@ -18,4 +18,5 @@ require (
 	github.com/lestrrat-go/jwx v1.2.1
 	github.com/tylerb/graceful v1.2.15
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e
+	golang.org/x/net v0.0.0-20210405180319-a5a99cb37ef4
 )
