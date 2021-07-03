@@ -34,6 +34,7 @@
 Not sure about
 - Recover
 - User-defined KeyFunc
+- Reverse Proxy
 
 # Books
 - [The Go Programming Language](https://drive.google.com/file/d/1H4ORFCaQFAndCmV5WrLmh1TLI0XnRJbc/view?usp=sharing)
