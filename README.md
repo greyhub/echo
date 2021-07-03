@@ -32,9 +32,9 @@
 
 # Note
 Not sure about
-- Recover
-- User-defined KeyFunc
-- Reverse Proxy
+- [Recover](https://echo.labstack.com/middleware/recover/)
+- [User-defined KeyFunc](https://echo.labstack.com/cookbook/jwt/)
+- [Reverse Proxy](https://echo.labstack.com/cookbook/reverse-proxy/)
 
 # Books
 - [The Go Programming Language](https://drive.google.com/file/d/1H4ORFCaQFAndCmV5WrLmh1TLI0XnRJbc/view?usp=sharing)
