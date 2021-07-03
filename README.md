@@ -8,7 +8,7 @@
 
 ## Cookbook
 - [x] Auto TLS
-- [ ] CORS
+- [x] CORS
 - [x] CRUD
 - [x] Embed
 - [x] Embed Resources
