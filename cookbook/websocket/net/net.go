@@ -20,7 +20,8 @@ func websocketHandler(c echo.Context) error {
 
 			// Read
 			msg := ""
-			if err = websocket.Message.Receive(ws, &msg); err != nil {
+			err = websocket.Message.Receive(ws, &msg)
+			if err != nil {
 				c.Logger().Error(err)
 			}
 			fmt.Printf("%s\n", msg)
@@ -32,11 +33,11 @@ func websocketHandler(c echo.Context) error {
 func main() {
 	e := echo.New()
 
-	e.Use(middleware.Logger())
+	// e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
 	e.Static("/", "../ui")
 	e.GET("/ws", websocketHandler)
 
-	e.Logger.Fatal(e.Start(":1324"))
+	e.Logger.Fatal(e.Start(":1323"))
 }
