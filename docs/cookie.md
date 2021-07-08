@@ -1,58 +1,44 @@
 # Cookie
 
-[What's cookie ?](#what) \
-[Why should use cookie ?](#why) \
-[When's cookie created ?](#when) \
-[Where's cookie stored ?](#where) \
-[How ?](#how)
-
-## What
-
-An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to the user's web browser.
-
-## Why
-
-**Session management**
-Logins, shopping carts, game scores, or anything else the server should remember.
-
-**Personalization**
-User preferences, themes, and other settings.
-
-**Tracking**
-Recording and analyzing user behavior.
-
-## When
-
 <p align="center">
-    <img width="100%" height="100%" src="https://images.viblo.asia/b84f08a3-4f79-40b1-96a6-7a8354d6d156.jpg">
+    <img width="70%" height="70%" src="https://images.viblo.asia/b84f08a3-4f79-40b1-96a6-7a8354d6d156.jpg">
+    <br>
     <i>Source: viblo</i>
 </p>
 
-Cookies are created by a web server while a user is browsing a website.
+
+## What
+> *Cookie là gì ?*
+
+Cookie (hay HTTP Cookie) là một phần dữ liệu được tạo bởi web server khi người dùng duyệt web.
+
+## Why
+> *Tại sao cần sử dụng cookie ?*
+
+**Quản lý phiên**: Cookie được sử dụng với mục đích chính để lưu trữ thông tin đăng nhập, giỏ hàng, điểm trò chơi, hay bất kỳ thông tin khác mà server cần ghi nhớ.
+
+**Cá nhân hóa**: Các thông tin khác có thể cần được lưu trữ như sở thích, chủ đề, cài đặt, ...
+
+**Theo dõi**: Cookie còn có thể được dùng để ghi lại lịch sử hành vi người dùng với mục đích để phân tích hành vi.
+
+## When
+> *Cookie được tạo ra và sử dụng khi nào ?*
+
+Cookie được tạo ra khi người dùng duyệt web và được gửi tới server theo mỗi request.
+
+> *Thời gian sử dụng cookie là bao lâu?*
+
+Thời gian khả dụng cho mỗi cookie là có giới hạn. Mặc định, cookies sẽ bị xóa khi tắt trình duyệt.
 
 ## Where
+> *Cookie được lưu trữ ở đâu ?*
 
-Cookies are placed on the device used to access a website, and more than one cookie may be placed on a user’s device during a session.
+Cookie được lưu trữ tại thiết bị của người dùng.
 
 ## How
+> *Sử dụng cookie như thế nào ?*
 
-Cookies are set using the Set-Cookie header field, sent in an HTTP response from the web server. 
+[Sử dụng document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie#examples)
 
-As an example, the browser sends its first HTTP request for the homepage of the www.example.org website:
-
-```
-GET /index.html HTTP/1.1
-Host: www.example.org
-...
-```
-
-The server responds with two Set-Cookie header fields:
-
-```
-HTTP/1.0 200 OK
-Content-type: text/html
-Set-Cookie: theme=light
-Set-Cookie: sessionToken=abc123; Expires=Wed, 09 Jun 2021 10:18:14 GMT
-...
-```
+[Sử dụng Set-Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 
