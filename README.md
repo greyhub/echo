@@ -31,8 +31,8 @@
 - [x] WebSocket [Introduction](https://en.wikipedia.org/wiki/WebSocket) [API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket), [Socket](https://viblo.asia/p/websocket-la-gi-hieu-ro-ve-websocket-1Je5E4BmlnL)
 - [x] Cookie [Introduction](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 - [x] Gzip [Introduction](https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/)
-- [ ] Http headers [Common headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
-- [ ] Response [Response code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [x] Http headers [Common headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+- [x] Response [Response code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [ ] OAuth2 [Introduction](https://oauth.net/2/) phần này khó, có thể bỏ qua 
 - [ ] OpenIDConnect [Introduction](https://openid.net/connect/) phần này khó, có thể bỏ qua 
 
