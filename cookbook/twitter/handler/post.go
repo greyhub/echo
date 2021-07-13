@@ -39,7 +39,7 @@ func (h *Handler) CreatePost(c echo.Context) (err error) {
 	}
 
 	// Save post in database
-	if err = db.DB("twiter").C("posts").Insert(p); err != nil {
+	if err = db.DB("twitter").C("posts").Insert(p); err != nil {
 		return
 	}
 
