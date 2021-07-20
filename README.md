@@ -27,7 +27,7 @@
 - [x] Streaming Response 
 - [x] Subdomains
 - [x] Timeouts
-- [ ] Twitter
+- [x] Twitter
 - [x] WebSocket [Introduction](https://en.wikipedia.org/wiki/WebSocket) [API](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket), [Socket](https://viblo.asia/p/websocket-la-gi-hieu-ro-ve-websocket-1Je5E4BmlnL)
 - [x] Cookie [Introduction](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)
 - [x] Gzip [Introduction](https://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/)
